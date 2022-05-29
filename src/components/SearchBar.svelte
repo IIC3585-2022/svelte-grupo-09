@@ -2,6 +2,7 @@
 let place="";
 function makeSearch(){
     
+    
 }
 </script>
 <div id="bar" class="search-wrapper input-group mb-3">
