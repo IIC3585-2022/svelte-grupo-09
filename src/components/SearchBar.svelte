@@ -3,6 +3,7 @@ import {apiData} from '../scripts/store.js'
 import {getWeatherFromCity } from '../scripts/weather.js'
 let place="";
 function makeSearch(){
+    console.log("hola");
     getWeatherFromCity(place).then(response=>response.json()).then(data=>{
         apiData.set(data);
         console.log(data);
