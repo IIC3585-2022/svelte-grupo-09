@@ -5,6 +5,7 @@
 	import SearchBar from './components/SearchBar.svelte';
   import TempCard from './components/TempCard.svelte';
   import WeatherCard from './components/WeatherCard.svelte';
+  import WindCard from './components/WindCard.svelte';
 </script>
 
 <main>
@@ -13,6 +14,6 @@
   <WeatherCard/>
   <TempCard/>
   <CoordsCard/>
-
+  <WindCard/>
   <HomeButton/>
 </main>
