@@ -1,24 +1,38 @@
 <script>
-import {apiData} from '../scripts/store.js'
-import {getWeatherFromCity } from '../scripts/weather.js'
-let place="";
-function makeSearch(){
-    console.log("hola");
-    getWeatherFromCity(place).then(response=>response.json()).then(data=>{
-        apiData.set(data);
-        console.log(data);
-    })
-    
+import {
+  search,
+  makeSearch,
+  searchVisibility
+} from '../store.js';
 
-    
-}
+let searchValue;
+search.subscribe(value => {
+  searchValue = value;
+});
+
+let searchVisibilityValue;
+searchVisibility.subscribe(value => {
+  searchVisibilityValue = value;
+});
 </script>
+
+{#if searchVisibilityValue}
 <div id="bar" class="search-wrapper input-group mb-3">
-    <input class="input-search" bind:value={place} type="text" placeholder="Busca un lugar"/>
-    <button class="btn btn-outline-secondary" on:click={makeSearch}>Buscar</button>
+    <input
+      class="input-search"
+      bind:value={searchValue}
+      type="text"
+      placeholder="Busca un lugar"
+    />
+    <button
+      class="btn btn-outline-secondary"
+      type="submit"
+      on:click={() => makeSearch(searchValue)}
+    >
+      Buscar
+    </button>
 </div>
-
-
+{/if}
 
 <style>
 #bar {
