@@ -1,30 +1,19 @@
 <script>
-	export let name;
+  import CoordsCard from './components/CoordsCard.svelte';
+  import HomeButton from './components/HomeButton.svelte';
+	import MainTitle from './components/MainTitle.svelte';
+	import SearchBar from './components/SearchBar.svelte';
+  import TempCard from './components/TempCard.svelte';
+  import WeatherCard from './components/WeatherCard.svelte';
+  import WindCard from './components/WindCard.svelte';
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+  <MainTitle/>
+  <SearchBar/>
+  <WeatherCard/>
+  <TempCard/>
+  <CoordsCard/>
+  <WindCard/>
+  <HomeButton/>
 </main>
-
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
-</style>

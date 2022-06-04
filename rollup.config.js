@@ -4,8 +4,12 @@ import resolve from '@rollup/plugin-node-resolve';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import css from 'rollup-plugin-css-only';
+import json from 'rollup-plugin-json';
+import replace from '@rollup/plugin-replace';
+import { config } from 'dotenv';
 
 const production = !process.env.ROLLUP_WATCH;
+config()
 
 function serve() {
 	let server;
@@ -55,6 +59,25 @@ export default {
 		resolve({
 			browser: true,
 			dedupe: ['svelte']
+		}),
+		// For importing json files
+		json({
+			include: 'node_modules/**',
+			exclude: [ 'node_modules/foo/**', 'node_modules/bar/**' ],
+			preferConst: true,
+			indent: '  ',
+			compact: true, 
+			namedExports: true
+		}),
+		// 
+		replace({
+			// 2 level deep object should be stringify
+			__myapp: JSON.stringify({
+				env: {
+					isProd: production,
+					WEATHER_API_KEY: process.env.WEATHER_API_KEY,
+				}
+			}),
 		}),
 		commonjs(),
 
