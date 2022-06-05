@@ -38,7 +38,7 @@ const getDescription = () => {
 <style>
 .weather-card {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   padding: 1rem;

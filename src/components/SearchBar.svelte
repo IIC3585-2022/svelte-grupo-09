@@ -37,6 +37,7 @@ searchVisibility.subscribe(value => {
 <style>
 #bar {
   display: flex;
+  
   flex-direction: row;
   align-items: center;
   justify-content: center;
