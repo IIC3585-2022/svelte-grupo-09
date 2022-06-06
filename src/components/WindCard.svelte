@@ -45,7 +45,7 @@ const getWind = () => {
   color: white;
   margin: 5px;
   height: 150px;
-  width:500px
+
 }
 .wind-icon {
   display: flex;
