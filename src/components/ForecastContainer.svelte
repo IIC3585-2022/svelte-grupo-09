@@ -3,6 +3,7 @@ import {
   forecastSet,
   forecast
 } from '../store.js';
+import Hoverable from './Hoverable.svelte';
 import ForecastCard from './ForecastCard.svelte';
 let forecastSetValue;
 forecastSet.subscribe((value) => {
@@ -22,12 +23,14 @@ forecast.subscribe((value) => {
 </div>
 
 {#each forecastValue.list as day}
-<div class="forecast-item">
+<Hoverable let:hovering={active}>
+<div class="forecast-item" class:active>
 <ForecastCard date={day.dt_txt} 
 temp_min={day.main.temp_min} 
 temp_max={day.main.temp_max} 
 weather={day.weather[0].description}/>
 </div>
+</Hoverable>
 {/each}
 </div>
 {/if}
@@ -50,7 +53,10 @@ weather={day.weather[0].description}/>
 }
 .forecast-item{
     justify-content: center;
-    width: 600px;
+    width: 100%;
     padding: 3px
+}
+.active{
+    background-color: #eee;
 }
 </style>
