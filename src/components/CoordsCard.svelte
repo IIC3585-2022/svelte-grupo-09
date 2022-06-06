@@ -40,6 +40,7 @@ let src = 'assets/compass.png';
   font-size: auto;
   color: white;
   margin: 5px;
+  height: 150px;
 }
 .coords-icon {
   display: flex;

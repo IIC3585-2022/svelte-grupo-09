@@ -24,7 +24,7 @@ const getWind = () => {
 {#if weatherSetValue}
 <div class="wind-card">
   <div class="wind-icon">
-    <img alt="wind" src={src} />
+    <img class="img" alt="wind" src={src} />
   </div>
   <div class="wind_info">
     <p>{ getWind() }</p>
@@ -44,5 +44,16 @@ const getWind = () => {
   font-size: auto;
   color: white;
   margin: 5px;
+  height: 150px;
+  width:500px
+}
+.wind-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img{
+  height: 80px;
+
 }
 </style>
