@@ -23,7 +23,9 @@ forecast.subscribe((value) => {
 </div>
 
 {#each forecastValue.list as day}
+{#if day.dt_txt.includes("12:00:00")}
 <Hoverable let:hovering={active}>
+
 <div class="forecast-item" class:active>
 <ForecastCard date={day.dt_txt} 
 temp_min={day.main.temp_min} 
@@ -31,6 +33,7 @@ temp_max={day.main.temp_max}
 weather={day.weather[0].description}/>
 </div>
 </Hoverable>
+{/if}
 {/each}
 </div>
 {/if}
