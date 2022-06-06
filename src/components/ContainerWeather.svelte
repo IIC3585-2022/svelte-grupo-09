@@ -32,6 +32,8 @@ weatherSet.subscribe((value) => {
 #container{
     display: grid;
     grid-gap: 10px;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
 }
 .one{
     grid-column: 1;

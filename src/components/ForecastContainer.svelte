@@ -44,7 +44,7 @@ weather={day.weather[0].description}/>
     flex-direction: column;
     justify-content:center;
     align-items: center;
-    width: 100%
+    width: 100vw;
     
 }
 .title-forecast {

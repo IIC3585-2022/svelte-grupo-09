@@ -40,16 +40,18 @@ const obtainDate = ()=>{
   
   display: grid;
 
-  width: 600px;
+  width: 80vw;
 
 }
 .date{
   grid-column: 1;
   grid-row:1;
+  text-align: center;
 }
 .temp{
   grid-column: 2;
-    grid-row:1;
+  grid-row:1;
+  text-align: center;
 
 }
 .weather{

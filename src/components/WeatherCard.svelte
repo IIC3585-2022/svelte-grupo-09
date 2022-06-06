@@ -47,7 +47,6 @@ const getDescription = () => {
   font-size: auto;
   color: white;
   margin: 5px;
-  height: 150px;
-
+  height: 20vh;
 }
 </style>
