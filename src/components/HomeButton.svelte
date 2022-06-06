@@ -28,7 +28,9 @@ let src = 'assets/previous.png';
 .home-button {
   width: 50px;
   height: 50px;
-  position: relative;
+  position: absolute;
+  top: 10px;
+  left:10px;
   display: inline-block;
   overflow: hidden;
   margin: 0;

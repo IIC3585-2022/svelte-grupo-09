@@ -50,6 +50,7 @@ const getTempInfo = () => {
   font-size: auto;
   color: black;
   margin: 5px;
+  height: 150px;
 }
 .temp-icon {
   display: flex;

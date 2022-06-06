@@ -37,7 +37,7 @@ searchVisibility.subscribe(value => {
 <style>
 #bar {
   display: flex;
-  flex-direction: row;
+  flex-direction:row;
   align-items: center;
   justify-content: center;
   width: 40vw;
@@ -46,19 +46,22 @@ searchVisibility.subscribe(value => {
   border-radius: 0.5rem;
   align-self: center;
   grid-column: span 2;
-  margin: 15px;
   margin: auto;
 
 }
 .input-search {
   width: 75%;
-  height: 100%;
+  height: 80%;
   font-size: 1.5rem;
   padding: 10px;
+  margin: 5px;
 }
 button {
   width: 25%;
-  height: 100%;
+  height: 80%;
   font-size: 1.5rem;
+  border-radius: 10px;
+  margin: 5px;
+  background-color: #E6E0DA;
 }
 </style>
