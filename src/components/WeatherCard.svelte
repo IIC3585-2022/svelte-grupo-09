@@ -48,5 +48,6 @@ const getDescription = () => {
   color: white;
   margin: 5px;
   height: 150px;
+
 }
 </style>

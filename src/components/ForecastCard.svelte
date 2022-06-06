@@ -1,0 +1,59 @@
+<script>
+import {
+  forecastSet,
+} from '../store.js';
+let forecastSetValue;
+forecastSet.subscribe((value) => {
+  forecastSetValue = value;
+});
+export let date;
+export let temp_min;
+export let temp_max;
+export let weather;
+
+const kelvinToCelsius = (temp) => (temp - 273.15).toFixed(2);
+temp_min = kelvinToCelsius(temp_min);
+temp_max = kelvinToCelsius(temp_max);
+</script>
+
+{#if forecastSetValue}
+<div id="forecast-card">
+   <div class= "forecast-info">
+        <div class= "date"><p>{date}</p></div>
+        <div class= "temp"><p>{temp_min}ºC/{temp_max}ºC</p></div>
+        <div class= "weather"><p>{weather}</p></div>
+    </div>
+</div>
+
+{/if}
+
+<style>
+
+.forecast-info{
+  
+  display: grid;
+
+  width: 600px;
+
+}
+.date{
+  grid-column: 1;
+  grid-row:1;
+}
+.temp{
+  grid-column: 2;
+    grid-row:1;
+
+}
+.weather{
+  grid-column: 3;
+  grid-row:1;
+
+
+}
+.weather > p{
+  position: relative;
+  text-align: right
+}
+
+</style>
